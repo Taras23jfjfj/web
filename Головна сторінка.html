@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Персональна сторінка викладача</title>
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #534bae;
+            --background-color: #f5f5f5;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .profile {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .profile-info h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .course-card {
+            background-color: var(--background-color);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .publications-list {
+            list-style: none;
+        }
+
+        .publications-list li {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Назва закладу навчання</h1>
+        <p>Кафедра (найменування кафедри)</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">Про викладача</a></li>
+            <li><a href="#courses">Курси</a></li>
+            <li><a href="#publications">Публікації</a></li>
+            <li><a href="#contact">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="profile">
+            <img src="/api/placeholder/300/400" alt="Фото викладача" class="profile-image">
+            <div class="profile-info">
+                <h1>Ім'я викладача</h1>
+                <p>Доктор технічних наук, професор</p>
+                <p>Спеціалізація: Комп'ютерні науки та інформаційні технології</p>
+                <p>Email:емейл викладача</p>
+                <p>Кабінет та корпус викладача</p>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>Про викладача</h2>
+            <p>Опис довсвіду викладача</p>
+        </section>
+
+        <section id="courses" class="section">
+            <h2>Навчальні курси</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <h3>Програмування Python</h3>
+                    <p>Базовий курс програмування на Python для студентів 2 курсу</p>
+                </div>
+                <div class="course-card">
+                    <h3>Бази даних</h3>
+                    <p>Проєктування та розробка баз даних для студентів 3 курсу</p>
+                </div>
+                <div class="course-card">
+                    <h3>Штучний інтелект</h3>
+                    <p>Вступ до штучного інтелекту для магістрів</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section">
+            <h2>Останні публікації</h2>
+            <ul class="publications-list">
+                <li>
+                    <strong>Розробка алгоритмів машинного навчання для аналізу великих даних</strong>
+                    <p>Міжнародний журнал комп'ютерних наук, 2023</p>
+                </li>
+                <li>
+                    <strong>Методи оптимізації баз даних у високонавантажених системах</strong>
+                    <p>Вісник Львівської політехніки, 2022</p>
+                </li>
+                <li>
+                    <strong>Застосування нейронних мереж у системах прийняття рішень</strong>
+                    <p>Конференція з штучного інтелекту, 2022</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Контактна інформація</h2>
+            <p>Email: (Email викладача)</p>
+            <p>Телефон: +380 (ХХ) ХХХ-XX-XX</p>
+            <p>Адреса: (Адреса закладу)</p>
+            <p>Години консультацій: Вівторок 14:00-15:30, Четвер 15:00-16:30</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 (найменування закладу)а"</p>
+    </footer>
+</body>
+</html>
